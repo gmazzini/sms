@@ -1,7 +1,6 @@
 <?php
 
 for($num=0;$num<32;$num++){
-
   $fd=dio_open("/dev/ttyCH9344USB".$num,O_RDWR|O_NOCTTY|O_NONBLOCK);
   dio_tcsetattr($fd,array("baud"=>115200,"bits"=>8,"stop"=>1,"parity"=>0,"flow_control"=>0,"is_canonical"=>0));
   sleep(2);
@@ -11,7 +10,6 @@ for($num=0;$num<32;$num++){
   echo "$num $oo\n\n";
   sleep(1);
   dio_close($fd);
-
 }
 
 ?>
