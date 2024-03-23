@@ -9,7 +9,7 @@ for(;;){
   dio_write($fd,"AT+CIMI;+GSN;+CREG?\r");
   usleep(100000);
   $oo=dio_read($fd);
-  echo "$num $oo\n\n";
+  echo "$oo";
   usleep(100000);
   dio_close($fd);
 }
