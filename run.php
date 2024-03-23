@@ -6,7 +6,6 @@ for(;;){
   $buf=fgets($fp);
   $q=explode("|",trim($buf));
   $num="+".$q[0]; $msg=$q[1];
-  echo "num=$num,msg=$msg\n";
   for(;;){
     $ss=0;
     $fd=dio_open("/dev/ttyCH9344USB".$modem,O_RDWR|O_NOCTTY|O_NONBLOCK);
@@ -18,7 +17,7 @@ for(;;){
     $oo=trim(dio_read($fd));
     $cc=substr($oo,20,1);
     if($cc=="1"){
-      echo "modem=$modem\n";
+      echo "modem=$modem|num=$num|msg=$msg\n";
       dio_write($fd,"AT+CMGF=1\r");
       usleep(100000);
       $oo=dio_read($fd);
