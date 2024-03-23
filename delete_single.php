@@ -8,7 +8,7 @@ usleep(100000);
 dio_write($fd,"AT+CMGD=1,4\r");
 usleep(100000);
 $oo=dio_read($fd);
-echo "$num $oo";
+echo $oo;
 dio_close($fd);
 
 ?>
