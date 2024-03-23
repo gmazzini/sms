@@ -8,7 +8,7 @@ usleep(100000);
 dio_write($fd,"AT+CMGL=\"ALL\"\r");
 usleep(100000);
 $oo=dio_read($fd);
-echo "$oo";
+echo $oo;
 dio_close($fd);
 
 ?>
