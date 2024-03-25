@@ -1,5 +1,5 @@
 <?php
-#include "local.php";
+include "local.php";
 $num=$argv[1];
 for(;;){
   $fd=dio_open($mydev.$num,O_RDWR|O_NOCTTY|O_NONBLOCK);
