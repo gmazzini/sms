@@ -28,7 +28,7 @@ for(;;){
       usleep(100000);
       $oo=dio_read($fd);
       $ss=1;
-      file_put_contents("/root/sms/sent/".$modem.".txt",date("YmdHis").PHP_EOL,FILE_APPEND|LOCK_EX);
+      file_put_contents("/home/sent/".$modem.".txt",date("YmdHis").PHP_EOL,FILE_APPEND|LOCK_EX);
     }
     dio_close($fd);
     $modem++;
