@@ -6,7 +6,7 @@ for(;;){
   usleep(100000);
   dio_tcsetattr($fd,array("baud"=>115200,"bits"=>8,"stop"=>1,"parity"=>0,"flow_control"=>0,"is_canonical"=>0));
   usleep(100000);
-  dio_write($fd,"AT+CIMI;+GSN;+CREG?\r");
+  dio_write($fd,"AT+CIMI;+GSN;+CCID;+CREG?\r");
   usleep(100000);
   $oo=dio_read($fd);
   echo "$oo";
