@@ -11,5 +11,4 @@ for($num=0;$num<32;$num++){
   echo "$num $oo\n";
   dio_close($fd);
 }
-
 ?>
