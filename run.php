@@ -1,5 +1,5 @@
 <?php
-
+include "local.php";
 date_default_timezone_set("UTC");
 $fp=fopen("/home/inout","w+");
 $modem=0;
@@ -9,7 +9,7 @@ for(;;){
   $num="+".$q[0]; $msg=$q[1];
   for(;;){
     $ss=0;
-    $fd=dio_open("/dev/ttyCH9344USB".$modem,O_RDWR|O_NOCTTY|O_NONBLOCK);
+    $fd=dio_open($mydev.$modem,O_RDWR|O_NOCTTY|O_NONBLOCK);
     usleep(100000);
     dio_tcsetattr($fd,array("baud"=>115200,"bits"=>8,"stop"=>1,"parity"=>0,"flow_control"=>0,"is_canonical"=>0));
     usleep(100000);
