@@ -13,5 +13,4 @@ for(;;){
   usleep(100000);
   dio_close($fd);
 }
-
 ?>
