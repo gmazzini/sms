@@ -1,5 +1,4 @@
 <?php
-
 include "auth.php";
 if(isset($_GET['to']))$to=$_GET['to'];
 if(isset($_GET['text']))$text=$_GET['text'];
@@ -9,5 +8,4 @@ if(strlen($to)>10&&strlen($text)>4&&$aaa[$token]==1){
   fwrite($fp,"$to|$text\n");
   fclose($fp);
 }
-
 ?>
